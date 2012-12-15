@@ -13,7 +13,8 @@ For example:
         "sDom": "Ttlfr",
         "oTreeTable": {
             "fnPreInit": function(nRow, aData, iDataIndex) {
-            // This function will be registerd as "aoRowCallback" of jquery.dataTables, thus it has the same signature as "fnRowCallback".
+            // This function will be registerd as "aoRowCallback" of jquery.dataTables,
+            //  thus it has the same signature as "fnRowCallback".
             // Specify "id" & "class" attributes for each row (TR) required by jquery.treeTable:
             //   for parent rows, add class 'parent';
             //   for children rows, add a class with name of prefix - 'child-of-' and parent id
