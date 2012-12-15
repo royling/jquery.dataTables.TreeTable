@@ -3,7 +3,7 @@ jquery.dataTables.TreeTable
 
 This is a plugin of jquery.dataTables to integrate jquery.treeTable.
 
-To use this plugin, 
+To use this plugin, check out the first 2 points and make use of the APIs in point 3:
 1. Add the feature char 'T' into "sDom" property in the initial settings of jquery.dataTables.
 2. Specify initial settings for jquery.treeTable integrated, which is "oTreeTable" property in the initial settings of jquery.dataTables.
 For example:
