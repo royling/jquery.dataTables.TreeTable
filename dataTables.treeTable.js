@@ -35,9 +35,9 @@
 
 	/** 
 	 * Save expanded nodes (TRs) before reloading data table.
-	 * And after reloading, call fnRestoreExpandedNodes to restore the expand state.
+	 * And after reloading, call restoreExpanded to restore the expand state.
 	 */
-	$.fn.dataTableExt.oApi.fnSaveExpandedNodes = function (oSettings) {
+	function saveExpanded (oSettings) {
 		var oTable = oSettings.oInstance, expandedRows;
 		if (!oTable.isTreeTable()) {
 			return;
@@ -48,15 +48,15 @@
 			expandedRows.push($(this).attr('id'));
 		});
 		expandedNodes[oSettings.sTableId] = expandedRows;
-	};
+	}
 
 	/**
 	 * Expand nodes which are saved before reloading data table to restore the expand state.
 	 */
-	function _fnRestore(oSettings) {
+	function restoreExpanded(oSettings) {
 		if (!isTreeTableInitialized(oSettings)) {
 			setTimeout(function () {
-				_fnRestore(oSettings);
+				restoreExpanded(oSettings);
 			}, 200);
 			return;
 		}
@@ -67,14 +67,13 @@
 		}
 		expandedNodes[tableId] = null;
 	}
-	$.fn.dataTableExt.oApi.fnRestoreExpandedNodes = _fnRestore;
 
 	$.fn.dataTableExt.oApi.fnReloadAjaxTreeTable = function (oSettings, sNewSource, fnCallback, bStandingRedraw) {
 		var oTable = oSettings.oInstance;
-		oTable.fnSaveExpandedNodes();
+		saveExpanded(oSettings);
 		oTable.removeClass('initialized-treeTable');
 		oTable.fnReloadAjax(sNewSource, fnCallback, bStandingRedraw);
-		oTable.fnRestoreExpandedNodes();
+		restoreExpanded(oSettings);
 	};
 
 	// Register a plugin to integrate jquery.treeTable
