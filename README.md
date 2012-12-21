@@ -10,9 +10,9 @@ For example:
 
 ```javascript
     $('#example').dataTable({
-        "sDom": "Ttlfr",
+        "sDom": "Ttfr",
         "oTreeTable": {
-            "fnPreInit": function(nRow, aData, iDataIndex) {
+            "fnPreInit": function(nRow, aData, iDisplayIndex, iDisplayIndexFull) {
             // This function will be registerd as "aoRowCallback" of jquery.dataTables,
             //  thus it has the same signature as "fnRowCallback".
             // Specify "id" & "class" attributes for each row (TR) required by jquery.treeTable:
