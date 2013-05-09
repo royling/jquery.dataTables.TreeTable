@@ -82,7 +82,7 @@
 			var oTable = oDTSettings.oInstance,
 				opts = getInitOpts(oDTSettings);
 			if (typeof opts.fnPreInit === 'function') {
-				oTable.oApi._fnCallbackReg(oDTSettings, "aoRowCallback", opts.fnPreInit, "preInitTreeTable");
+				oTable.oApi._fnCallbackReg(oDTSettings, "aoRowCreatedCallback", opts.fnPreInit, "preInitTreeTable");
 			}
 			oTable.oApi._fnCallbackReg(oDTSettings, "aoDrawCallback", function () {
 				oTable.fnInitTreeTable(opts);
