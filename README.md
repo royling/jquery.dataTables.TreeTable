@@ -1,7 +1,9 @@
 jquery.dataTables.TreeTable
 ===========================
 
-This is a plugin of [jquery.dataTables](http://datatables.net) to integrate [jquery.treeTable](https://github.com/ludo/jquery-treetable).
+This is a plugin of [jquery.dataTables](http://datatables.net) to integrate [jquery.treeTable v2.x](https://github.com/ludo/jquery-treetable/tree/2.3.1). **Not working with the latest jquery-treetable plugin**
+
+If you are still interested, I did create a live example [here](https://jsfiddle.net/royling/zg9q6sjd/), hope this makes things clear.
 
 To use this plugin, check out the first 2 points and make use of the APIs in point 3:
 * Add the feature char `'T'` into `"sDom"` property in the initial settings of jquery.dataTables.
